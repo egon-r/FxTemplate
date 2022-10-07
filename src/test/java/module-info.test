@@ -1,0 +1,6 @@
+--add-opens
+    dev.egonr.jfxtemplate/dev.egonr.jfxtemplate=org.testfx.junit5
+--add-opens
+    javafx.graphics/com.sun.javafx.application=org.testfx
+--add-reads
+    dev.egonr.jfxtemplate=org.testfx
