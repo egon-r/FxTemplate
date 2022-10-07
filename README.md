@@ -1,4 +1,4 @@
-# JFxTemplate
+# FxTemplate
 
 A template for a modern JavaFx cross-platform desktop application.
 
