@@ -3,14 +3,14 @@ plugins {
     id("idea")
     id("application")
     id("org.jetbrains.kotlin.jvm") version "1.6.20"
-    id("org.openjfx.javafxplugin") version "0.0.10"
-    id("org.beryx.jlink") version "2.24.1"
+    id("org.openjfx.javafxplugin") version "0.0.13"
+    id("org.beryx.jlink") version "2.25.0"
     id("org.jetbrains.dokka") version "1.6.20"
 }
 
 val applicationName = "FxTemplate"
 group = "dev.egonr"
-version = "0.0.1"
+version = "1.0.0"
 
 val moduleArgs = arrayOf<String>(
     "--add-reads", "flogger=flogger.system.backend",
@@ -32,7 +32,6 @@ repositories {
 
 dependencies {
     // kotlin
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.20")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
     // ui
@@ -61,12 +60,12 @@ java {
 }
 
 javafx {
-    version = "17.0.1"
+    version = "20-ea+3"
     modules = listOf("javafx.controls", "javafx.fxml")
 }
 
 application {
-    mainModule.set("dev.egonr.jfxtemplate.main")
+    mainModule.set("dev.egonr.jfxtemplate")
     mainClass.set("dev.egonr.jfxtemplate.main.Main")
     val run by tasks.getting(JavaExec::class) {
         jvmArgs = appJvmArgs
