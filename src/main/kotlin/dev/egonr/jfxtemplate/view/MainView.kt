@@ -1,12 +1,13 @@
 package dev.egonr.jfxtemplate.view
 
 import com.google.common.flogger.FluentLogger
-import de.jensd.fx.glyphs.GlyphIcon
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon
 import de.jensd.fx.glyphs.materialicons.MaterialIcon
 import de.jensd.fx.glyphs.materialicons.MaterialIconView
+import dev.egonr.jfxtemplate.main.AppTheme
+import dev.egonr.jfxtemplate.main.Main
 import dev.egonr.jfxtemplate.model.PersonViewModel
 import dev.egonr.jfxtemplate.viewmodel.MainViewModel
+import javafx.application.Platform
 import javafx.beans.binding.Bindings
 import javafx.geometry.Pos
 import javafx.scene.control.*
@@ -22,7 +23,7 @@ class MainView : StackPane() {
 
     init {
         children += VBox().apply {
-            alignment = Pos.CENTER
+            maxHeight = Double.MAX_VALUE
 
             children += HBox().apply {
                 spacing = 16.0
@@ -50,6 +51,17 @@ class MainView : StackPane() {
                         logger.atInfo().log("info log")
                         logger.atWarning().log("warning log")
                         logger.atSevere().log("severe log")
+                    }
+                }
+                children += Button("Switch Theme").apply {
+                    setOnAction {
+                        Platform.runLater {
+                            if(AppTheme.currentTheme == AppTheme.Themes.DARK) {
+                                AppTheme.setTheme(AppTheme.Themes.LIGHT, scene)
+                            } else {
+                                AppTheme.setTheme(AppTheme.Themes.DARK, scene)
+                            }
+                        }
                     }
                 }
             }

@@ -1,0 +1,8 @@
+.root {
+    -fx-font-family: Roboto, "Roboto Light", "Roboto Regular";
+    -fx-font-size: 14;
+    /*
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+     */
+}

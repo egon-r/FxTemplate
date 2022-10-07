@@ -18,4 +18,6 @@ A template for a modern JavaFx cross-platform desktop application.
 - Asynchronous programming with [kotlinx-coroutines](https://github.com/Kotlin/kotlinx.coroutines)
 - GUI Testing using [TestFX](https://github.com/TestFX/TestFX)
 - Documentation using [Dokka](https://github.com/Kotlin/dokka)
-- Simple MVVM example
+- MVVM example
+- Custom Themes
+- Custom Fonts

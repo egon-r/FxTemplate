@@ -1,0 +1,5 @@
+@import "AppCommon.css";
+
+.root {
+    -fx-base: #333;
+}
